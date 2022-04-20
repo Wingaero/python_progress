@@ -1,6 +1,7 @@
 fruits = ["apple", "banana", "cherry"]
 more_fruits = []
 x = 0
+z = x + 1
 while True:
     for i in range(len(fruits)):
       if x % 2 == 0:
