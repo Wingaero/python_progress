@@ -1,0 +1,21 @@
+from random import randint
+is_active = True
+weapon = "sword"
+weapon_list = ["sword"]
+slot_num = 0
+def check_slot():
+        slot_num = weapon_list.index(weapon)
+        print(f"Weapon is in your inventory in slot number {1+ slot_num}")
+
+
+while is_active:
+
+    weapon = input("What weapon are you using? ")
+
+    if weapon in weapon_list:
+        check_slot()
+    elif weapon not in weapon_list:
+        weapon_list.append(weapon)
+        slot_num += 1
+        print(f"Weapon is not in your inventory, adding it to slot {1+ slot_num} now.")
+        check_slot()

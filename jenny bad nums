@@ -1,0 +1,14 @@
+import random;
+
+upper_limit = 621
+
+bad_nums = [70, 71, 109, 317, 336, 337, 353, 374, 375, 319, 320, 318, 354, 480, 174, 163, 156, 611]
+
+def get_num():
+    number = random.randint( 0, upper_limit)
+    if (number not in bad_nums):
+        print ("Your number is: ", number)
+    else:
+        get_num()
+
+get_num()

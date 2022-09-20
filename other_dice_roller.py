@@ -8,4 +8,4 @@ while is_active:
     print(dice_rolls, 'You rolled', sum(rolls for rolls in dice_rolls))
 
     is_restart = input('Would you like to roll more dice? (y/n): ')
-    if is_restart == 'n': is_active = False
+    if is_restart == 'n': is_active = False #notmycode

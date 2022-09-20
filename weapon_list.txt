@@ -1,0 +1,1 @@
+(mace, hand-crossbow, longsword)
