@@ -5,8 +5,6 @@ weapon_list = ["sword"]
 slot_num = 0
 num_dice = 0
 num_sides = 0
-
-
 file = open('dnd_weapon_array.txt')
 
 def check_slot():
@@ -17,18 +15,29 @@ def get_stats():
     global num_dice
     global num_sides
     data = file.readline()
-    num_dice = data.find("1")
-    num_sides = data.find("2")
+    ##num_dice = data.find("1", , ) ### ranges = starting @ (find("sword") + length of ("weapon") + ", ")
+                                  ### ranges = ending @ (find("sword") + length of ("weapon") + ", "x", "x")
+    ##num_sides = data.find("2", , )
+
+def read_through():
+    i = 0
+    while foundit >= 0:
+        runit = file.readline(i)
+        foundit = runit.find("{weapon}")
+        i += 1
+    else:
+        return foundit 
 
 
 while is_active:
-    
+
     with open('dnd_weapon_array.txt') as file:
-        
+    
 
         weapon = input("What weapon are you using? ")
-
+    
         if weapon in weapon_list:
+            read_through()
             get_stats()
             check_slot()
             print(num_dice)
