@@ -3,19 +3,41 @@ is_active = True
 weapon = "sword"
 weapon_list = ["sword"]
 slot_num = 0
+num_dice = 0
+num_sides = 0
+
+
+file = open('dnd_weapon_array.txt')
+
 def check_slot():
-        slot_num = weapon_list.index(weapon)
-        print(f"Weapon is in your inventory in slot number {1+ slot_num}")
+    slot_num = weapon_list.index(weapon)
+    print(f"Weapon is in your inventory in slot number {slot_num}")
+
+def get_stats():
+    global num_dice
+    global num_sides
+    data = file.readline()
+    num_dice = data.find("1")
+    num_sides = data.find("2")
 
 
 while is_active:
+    
+    with open('dnd_weapon_array.txt') as file:
+        
 
-    weapon = input("What weapon are you using? ")
+        weapon = input("What weapon are you using? ")
 
-    if weapon in weapon_list:
-        check_slot()
-    elif weapon not in weapon_list:
-        weapon_list.append(weapon)
-        slot_num += 1
-        print(f"Weapon is not in your inventory, adding it to slot {1+ slot_num} now.")
-        check_slot()
+        if weapon in weapon_list:
+            get_stats()
+            check_slot()
+            print(num_dice)
+            print(num_sides)
+            file.close()
+        elif weapon not in weapon_list:
+            get_stats()
+            weapon_list.append(weapon)
+            slot_num += 1
+            print(f"Weapon is not in your inventory, adding it to slot {slot_num} now.")
+            check_slot()
+            file.close()
