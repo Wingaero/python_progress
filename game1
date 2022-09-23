@@ -1,0 +1,46 @@
+from random import randint
+is_active = True
+choice_a = False
+choice_b = False
+choice_c = False
+dialogue = " "
+script_a = " "
+script_b = " "
+script_c = " "
+dia_a = " "
+dia_b = " "
+dia_c = " "
+
+
+if is_active == True:
+
+    def choice_multi():
+        print("Time to make a choice: ")
+        print(f"a: {dia_a}")
+        print(f"b: {dia_b}")
+        print(f"c: {dia_c}")
+        choice = input("Please type your choice here: ")
+        if choice == "a":
+            global choice_a
+            choice_a = True
+            dialogue = script_a
+            print(dialogue)
+        elif choice == "b":
+            global choice_b 
+            choice_b = True
+            dialogue = script_b
+            print(dialogue)
+        elif choice == "c":
+            global choice_c 
+            choice_c = True
+            dialogue = script_c
+            print(dialogue)
+        else:
+            print("Sorry, that is not a valid choice! Please choose a, b, or c!")
+
+
+    print("Innkeeper: Welcome weary traveler! Feel free to make yourself at home here at the Bumbling Bard.")
+    print("           If you're hungry, we have all sorts of good food on the menu! The special tonight is our special Mac n Cheese!")
+    print("           Here's the key to your room, first night is on the house!")
+
+    choice_multi()

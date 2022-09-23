@@ -15,7 +15,7 @@ def get_stats():
     global num_dice
     global num_sides
     data = file.readline()
-    ##num_dice = data.find("1", , ) ### ranges = starting @ (find("sword") + length of ("weapon") + ", ")
+   ##num_dice = data.find("1", , ) ### ranges = starting @ (find("sword") + length of ("weapon") + ", ")
                                   ### ranges = ending @ (find("sword") + length of ("weapon") + ", "x", "x")
     ##num_sides = data.find("2", , )
 
@@ -26,7 +26,7 @@ def read_through():
         foundit = runit.find("{weapon}")
         i += 1
     else:
-        return foundit 
+        return foundit
 
 
 while is_active:
